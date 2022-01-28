@@ -14,10 +14,53 @@
 }
 
 .cardTwo {
-  margin-top: 1vh;
+  margin-top: 3vh;
   font-size: 1.5em;
-  font-weight: solid;
+  font-weight: 550;
   grid-column: 2 / span 4;
-  height: 30vh;
+  height: 35vh;
   background-color: #8f8f9408;
+}
+
+.welcomeUsername {
+  margin-top: 0px;
+  margin-left: 1vw;
+}
+
+.tagLine {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0px;
+  margin-left: 1vw;
+}
+
+.cards {
+  margin-right: 17vw;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.3vw;
+}
+
+.label {
+  padding-left: 1vw;
+  margin-left: 1vw;
+  font-size: 1.1rem;
+  color: #8f8f94;
+  font-weight: normal;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.number {
+  font-size: 0.8rem;
+  color: white;
+  font-weight: normal;
+  padding-left: 0.43vw;
+  padding-top: 0.5vh;
+  padding-bottom: 0.4vh;
+  background-color: #8f8f94;
+  width: 1vw;
+  border-radius: 100%;
 }
