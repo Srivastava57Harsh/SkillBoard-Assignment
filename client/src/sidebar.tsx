@@ -14,12 +14,22 @@ export default function Sidebar() {
           </label>
         </div>
 
-        <label className="text2">
+        <label
+          className="text2"
+          onClick={() => {
+            window.location.href = "/";
+          }}
+        >
           <img src="/home.svg" className="image2" />
           <p className="para2">Home</p>
         </label>
         <div className="text1Container2">
-          <label className="content">
+          <label
+            className="content"
+            onClick={() => {
+              window.location.href = "/profile";
+            }}
+          >
             <img src="/assignment_turned_in.svg" className="image3" />
             <p className="para3">Profile</p>
           </label>
