@@ -1,0 +1,23 @@
+.gridContainer {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  height: 85vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 5px;
+  padding: 0 15px;
+}
+
+.sideBar {
+  grid-row: 1 / span 2;
+}
+
+.cardTwo {
+  margin-top: 1vh;
+  font-size: 1.5em;
+  font-weight: solid;
+  grid-column: 2 / span 4;
+  height: 30vh;
+  background-color: #8f8f9408;
+}
