@@ -34,6 +34,34 @@ export default function Profile() {
               <img src="./edit.png" className="icons2" />
             </div>
           </div>
+          <div className="moreInfo">
+            <img src="./mail.png" className="icons3" />
+            <input className="emailInput" placeholder="Email"></input>
+            <img src="./phone.png" className="icons3" />
+            <input className="emailInput" placeholder="Phone"></input>
+            <img src="./linkedin.png" className="icons4" />
+            <img src="./github.png" className="icons5" />
+          </div>
+        </div>
+        <div className="experience">
+          <label className="experienceLabel">
+            <img src="./experience.png" className="icons6" />
+            <p className="text">Overall experience</p>
+          </label>
+          <div className="experienceEditcontainer">
+            <div className="years">
+              <input className="yearInput" placeholder="7"></input> years /{" "}
+              <input className="yearInput" placeholder="0"></input> remote years
+              <br />
+              <select placeholder="Average" className="englishInput" disabled>
+                <option value="">Poor</option>
+                <option value="">Average</option>
+                <option value="">Professional</option>
+              </select>{" "}
+              English proficiency
+            </div>
+            <img src="./edit.png" className="icons2" />
+          </div>
         </div>
       </div>
     </div>
