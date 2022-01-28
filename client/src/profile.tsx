@@ -7,7 +7,20 @@ export default function Profile() {
   const [recordStatus2, setRecordStatus2] = useState("edit");
   const [recordStatus3, setRecordStatus3] = useState("edit");
   const [recordStatus4, setRecordStatus4] = useState("edit");
-  const [name, setName] = useState("John");
+  const [name, setName] = useState("");
+
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    years: "",
+    remoteYears: "",
+    english: "Poor",
+    work: "Part Time",
+  });
+
+  window.localStorage.setItem("data", JSON.stringify(data));
+
   return (
     <div className="gridContainer">
       <div className="sideBar">
@@ -51,6 +64,7 @@ export default function Profile() {
               <label className="nameCircle">{name}</label>
               <div>
                 <input
+                  id="nameInputId"
                   className="nameText"
                   onChange={async (event) => {
                     const nameText = event.target.value.substring(0, 4);
@@ -73,6 +87,12 @@ export default function Profile() {
                 src={recordStatus2 === "tick" ? "/tick.svg" : "/edit.png"}
                 onClick={async () => {
                   if (recordStatus2 === "tick") {
+                    // const form: HTMLFormElement = document.getElementById(
+                    //   "nameInputId"
+                    // ) as HTMLFormElement;
+                    // const username = (form.elements[0] as HTMLInputElement)
+                    //   .value;
+                    //
                     setRecordStatus2("edit");
                   } else {
                     setRecordStatus2("tick");
