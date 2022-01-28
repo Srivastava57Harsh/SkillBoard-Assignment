@@ -41,6 +41,8 @@
 }
 
 .uploadButtoncontainer {
+  position: absolute;
+  right: 3vw;
   margin-top: 2vh;
   margin-left: 15vw;
   display: flex;
@@ -65,4 +67,47 @@
   margin-top: 0.6vh;
   height: 3vh;
   width: 1.5vw;
+}
+
+.details {
+  margin-top: 3vh;
+  height: 25vh;
+  border-bottom: 1px solid #8f8f9440;
+}
+
+.nameCountry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nameLabel {
+  margin-left: 1vw;
+  display: flex;
+  margin-top: 1vh;
+}
+.nameCircle {
+  margin-right: 2vw;
+  font-size: 1.2rem;
+  padding: 2.5vh 1.2vh;
+  height: 3vh;
+  border-radius: 100%;
+  color: #fff;
+  background-color: #8f8f9470;
+}
+
+.nameText {
+  font-size: 1.4rem;
+  margin-top: 0.5vh;
+  margin-bottom: 0vh;
+}
+
+.countryText {
+  font-size: 1rem;
+  margin-top: 5vh;
+}
+
+.nameEdit {
+  margin-top: 1vh;
+  position: absolute;
+  right: 3vw;
 }

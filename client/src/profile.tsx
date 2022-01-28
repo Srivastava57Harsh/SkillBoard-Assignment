@@ -22,6 +22,19 @@ export default function Profile() {
             <img src="./edit.png" className="icons2" />
           </div>
         </div>
+        <div className="details">
+          <div className="nameCountry">
+            <div className="nameLabel">
+              <label className="nameCircle">John</label>
+              <p className="nameText">
+                John Doe<p className="countryText">Albania</p>
+              </p>
+            </div>
+            <div className="nameEdit">
+              <img src="./edit.png" className="icons2" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
