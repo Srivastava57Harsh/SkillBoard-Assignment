@@ -53,12 +53,27 @@ export default function Profile() {
               <input className="yearInput" placeholder="7"></input> years /{" "}
               <input className="yearInput" placeholder="0"></input> remote years
               <br />
-              <select placeholder="Average" className="englishInput" disabled>
+              <select className="englishInput" disabled>
                 <option value="">Poor</option>
                 <option value="">Average</option>
                 <option value="">Professional</option>
               </select>{" "}
               English proficiency
+            </div>
+            <img src="./edit.png" className="icons2" />
+          </div>
+        </div>
+        <div className="availability">
+          <label className="experienceLabel">
+            <img src="./availability.png" className="icons6" />
+            <p className="text3">Availabilty</p>
+          </label>
+          <div className="availabilitycontainer">
+            <div className="years">
+              <select className="availabiltyInput" disabled>
+                <option value="">Part Time</option>
+                <option value="">Full Time</option>
+              </select>
             </div>
             <img src="./edit.png" className="icons2" />
           </div>

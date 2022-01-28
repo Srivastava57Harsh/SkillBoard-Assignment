@@ -193,3 +193,36 @@
   border: none;
   outline: none;
 }
+
+.text3 {
+  margin-left: 1vw;
+  margin-top: 0.3vh;
+  font-size: 1.1rem;
+  width: 4.5vw;
+  border: none;
+  outline: none;
+}
+
+.availability {
+  margin-top: 4vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 15vh;
+  border-bottom: 1px solid #8f8f9440;
+}
+
+.availabilitycontainer {
+  position: absolute;
+  right: 3vw;
+  margin-left: 15vw;
+  display: flex;
+}
+
+.availabiltyInput {
+  margin-top: 0.2vh;
+  font-weight: bold;
+  font-size: 1.1rem;
+  width: 7vw;
+  border: none;
+  outline: none;
+}
