@@ -3,8 +3,66 @@
   font-weight: 400;
   height: 85vh;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 2px;
   padding: 10px;
+}
+
+.sideBar {
+  grid-row: 1 / span 2;
+}
+
+.form {
+  grid-column: 2 / span 5;
+  grid-row: 1 / span 2;
+}
+
+.uploadResume {
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 15vh;
+  border-bottom: 1px solid #8f8f9440;
+}
+
+.uploadLabel {
+  margin: 2vh 2vw;
+  display: flex;
+}
+
+.icons {
+  height: 2.5vh;
+  width: 1vw;
+}
+
+.text {
+  margin: 0 1vw;
+}
+
+.uploadButtoncontainer {
+  margin-top: 2vh;
+  margin-left: 15vw;
+  display: flex;
+}
+
+.uploadButton {
+  opacity: 50%;
+  cursor: pointer;
+  margin-right: 1vw;
+  background: rgb(208, 230, 255);
+  padding: 1vh 1vw;
+  height: 2.8vh;
+  border-radius: 7px;
+  border: 1px solid rgb(126, 186, 255);
+}
+
+.uploadButton:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.icons2 {
+  margin-top: 0.6vh;
+  height: 3vh;
+  width: 1.5vw;
 }
