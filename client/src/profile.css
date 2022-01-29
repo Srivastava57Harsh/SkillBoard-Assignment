@@ -191,7 +191,7 @@
   margin-top: 0.2vh;
   font-weight: bold;
   font-size: 1.1rem;
-  width: 1vw;
+  width: 2vw;
   border: none;
   outline: none;
 }
@@ -236,4 +236,8 @@
   width: 7vw;
   border: none;
   outline: none;
+}
+
+.chosenOption {
+  font-weight: bold;
 }
