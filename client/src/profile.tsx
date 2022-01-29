@@ -7,19 +7,20 @@ export default function Profile() {
   const [recordStatus2, setRecordStatus2] = useState("edit");
   const [recordStatus3, setRecordStatus3] = useState("edit");
   const [recordStatus4, setRecordStatus4] = useState("edit");
+  const [profileStatus, setProfileStatus] = useState(false);
   const [data, setData] = useState({
     fileLocation: "Let's start uploading your resume",
     circleName: "",
-    name: "",
-    email: "",
-    phone: "",
-    years: "",
-    country: "",
-    remoteYears: "",
-    english: "NA",
+    name: "John Doe",
+    email: "johndoe@gmail.com",
+    phone: "+333 8989 2343",
+    years: "7",
+    country: "Albania",
+    remoteYears: "0",
+    english: "Average",
     work: "Part Time",
-    linkedin: "",
-    github: "",
+    linkedin: "https://www.linkedin.com/in/harsh-srivastava-65649a17a/",
+    github: "https://github.com/Srivastava57Harsh",
   });
 
   const handleUpdate = () => {
@@ -108,9 +109,10 @@ export default function Profile() {
               <div className="nameEdit">
                 <img
                   src={recordStatus2 === "tick" ? "/tick.svg" : "/edit.png"}
-                  onClick={async () => {
+                  onClick={() => {
                     if (recordStatus2 === "tick") {
                       setRecordStatus2("edit");
+
                       setData({
                         ...data,
                         circleName: data.name.substring(0, 4),
@@ -146,10 +148,34 @@ export default function Profile() {
                   setData({ ...data, phone: event.target.value });
                 }}
               ></input>
-              <a href="https://www.srmkzilla.net/" target="_blank">
-                <img src="./linkedin.png" className="icons4" />
-              </a>
-              <img src="./github.png" className="icons5" />
+              <img
+                src="./linkedin.png"
+                className="icons4"
+                title={data.linkedin}
+                onClick={() => {
+                  if (recordStatus2 === "tick") {
+                    const linkedin = prompt(
+                      "Please enter your Linkedin link:",
+                      data.linkedin
+                    );
+                    setData({ ...data, linkedin: `${linkedin}` });
+                  }
+                }}
+              />
+              <img
+                src="./github.png"
+                className="icons5"
+                title={data.github}
+                onClick={() => {
+                  if (recordStatus2 === "tick") {
+                    const github = prompt(
+                      "Please enter your Github link:",
+                      data.github
+                    );
+                    setData({ ...data, github: `${github}` });
+                  }
+                }}
+              />
             </div>
           </div>
         </form>
