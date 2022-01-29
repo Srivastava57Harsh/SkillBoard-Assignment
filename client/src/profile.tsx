@@ -13,7 +13,7 @@ export default function Profile() {
     circleName: "John",
     name: "John Doe",
     email: "johndoe@gmail.com",
-    phone: "+333 8989 2343",
+    phone: "333 8989 2343",
     years: "7",
     country: "Albania",
     remoteYears: "0",
