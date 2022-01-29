@@ -193,7 +193,7 @@
   margin-top: 0.2vh;
   font-weight: bold;
   font-size: 1.1rem;
-  width: 2vw;
+  width: 1.5vw;
   border: none;
   outline: none;
 }
@@ -242,4 +242,8 @@
 
 .chosenOption {
   font-weight: bold;
+}
+
+.plusSymbol {
+  margin: 1vh 0vh 1vh 0vh;
 }

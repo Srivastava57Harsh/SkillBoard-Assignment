@@ -1,6 +1,7 @@
 import Sidebar from "./sidebar";
 import "./profile.css";
 import { useEffect, useState } from "react";
+import Joi from "joi";
 
 export default function Profile() {
   const [recordStatus, setRecordStatus] = useState("edit");
@@ -22,8 +23,30 @@ export default function Profile() {
     github: "https://github.com/Srivastava57Harsh",
   });
 
-  const handleUpdate = () => {
-    window.localStorage.setItem("data", JSON.stringify(data));
+  const schema = Joi.object({
+    email: Joi.string().email({
+      minDomainSegments: 2,
+      tlds: { allow: ["com", "net"] },
+    }),
+    phone: Joi.number().integer().required(),
+    years: Joi.number().integer().required(),
+    remoteYears: Joi.number().integer().required(),
+  });
+
+  const handleUpdate = async () => {
+    try {
+      await schema.validateAsync({
+        email: data.email,
+        phone: data.phone,
+        years: data.years,
+        remoteYears: data.remoteYears,
+      });
+      window.localStorage.setItem("data", JSON.stringify(data));
+    } catch (err) {
+      alert(
+        "Invalid input. Kindly check your email, phone number or work experience. "
+      );
+    }
   };
 
   useEffect(() => {
@@ -140,17 +163,19 @@ export default function Profile() {
               placeholder="Email"
               readOnly={recordStatus2 === "edit"}
               onChange={(event) => {
+                console.log(event.target.value);
                 setData({ ...data, email: event.target.value });
               }}
             ></input>
             <img src="./phone.png" className="icons3" />
+            <p className="plusSymbol">+</p>
             <input
               value={data.phone}
               type="tel"
               className="emailInput"
               placeholder="Phone"
               readOnly={recordStatus2 === "edit"}
-              onChange={(event) => {
+              onChange={async (event) => {
                 setData({ ...data, phone: event.target.value });
               }}
             ></input>
@@ -210,7 +235,7 @@ export default function Profile() {
                 onChange={(event) => {
                   setData({ ...data, remoteYears: event.target.value });
                 }}
-              ></input>{" "}
+              ></input>
               remote years
               <br />
               <select
