@@ -13,7 +13,7 @@ export default function Profile() {
     circleName: "John",
     name: "John Doe",
     email: "johndoe@gmail.com",
-    phone: "333 8989 2343",
+    phone: "33389892343",
     years: "7",
     country: "Albania",
     remoteYears: "0",
@@ -29,8 +29,6 @@ export default function Profile() {
       tlds: { allow: ["com", "net"] },
     }),
     phone: Joi.number().integer().required(),
-    years: Joi.number().integer().required(),
-    remoteYears: Joi.number().integer().required(),
   });
 
   const handleUpdate = async () => {
@@ -38,14 +36,10 @@ export default function Profile() {
       await schema.validateAsync({
         email: data.email,
         phone: data.phone,
-        years: data.years,
-        remoteYears: data.remoteYears,
       });
       window.localStorage.setItem("data", JSON.stringify(data));
     } catch (err) {
-      alert(
-        "Invalid input. Kindly check your email, phone number or work experience. "
-      );
+      alert("Invalid input. Kindly check your email or phone number. ");
     }
   };
 
