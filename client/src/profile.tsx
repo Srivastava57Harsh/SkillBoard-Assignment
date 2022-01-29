@@ -24,10 +24,11 @@ export default function Profile() {
   });
 
   const schema = Joi.object({
-    email: Joi.string().email({
-      minDomainSegments: 2,
-      tlds: { allow: ["com", "net"] },
-    }),
+    email: Joi.string().pattern(
+      new RegExp(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )
+    ),
     phone: Joi.number().integer().required(),
   });
 
@@ -143,6 +144,7 @@ export default function Profile() {
                   } else {
                     setRecordStatus2("tick");
                   }
+
                   handleUpdate();
                 }}
                 className="icons2"
