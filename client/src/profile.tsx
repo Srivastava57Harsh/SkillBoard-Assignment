@@ -7,10 +7,9 @@ export default function Profile() {
   const [recordStatus2, setRecordStatus2] = useState("edit");
   const [recordStatus3, setRecordStatus3] = useState("edit");
   const [recordStatus4, setRecordStatus4] = useState("edit");
-  const [profileStatus, setProfileStatus] = useState(false);
   const [data, setData] = useState({
     fileLocation: "Let's start uploading your resume",
-    circleName: "",
+    circleName: "John",
     name: "John Doe",
     email: "johndoe@gmail.com",
     phone: "+333 8989 2343",
@@ -28,9 +27,16 @@ export default function Profile() {
   };
 
   useEffect(() => {
-    const dataItems = JSON.parse(window.localStorage.getItem("data")!);
-    console.log(dataItems);
-    setData(dataItems);
+    if (
+      window.localStorage.getItem("data") === null ||
+      window.localStorage.getItem("data") === undefined
+    ) {
+      handleUpdate();
+    } else {
+      const dataItems = JSON.parse(window.localStorage.getItem("data")!);
+      console.log(dataItems);
+      setData(dataItems);
+    }
   }, []);
 
   return (
@@ -79,106 +85,106 @@ export default function Profile() {
             />
           </div>
         </div>
-        <form>
-          <div className="details">
-            <div className="nameCountry">
-              <div className="nameLabel">
-                <label className="nameCircle">{data.circleName}</label>
-                <div>
-                  <input
-                    value={data.name}
-                    id="nameInputId"
-                    className="nameText"
-                    onChange={async (event) => {
-                      setData({ ...data, name: event.target.value });
-                    }}
-                    placeholder="John Doe"
-                    readOnly={recordStatus2 === "edit"}
-                  ></input>
-                  <input
-                    value={data.country}
-                    className="countryText"
-                    placeholder="Albania"
-                    readOnly={recordStatus2 === "edit"}
-                    onChange={(event) => {
-                      setData({ ...data, country: event.target.value });
-                    }}
-                  ></input>
-                </div>
-              </div>
-              <div className="nameEdit">
-                <img
-                  src={recordStatus2 === "tick" ? "/tick.svg" : "/edit.png"}
-                  onClick={() => {
-                    if (recordStatus2 === "tick") {
-                      setRecordStatus2("edit");
 
-                      setData({
-                        ...data,
-                        circleName: data.name.substring(0, 4),
-                      });
-                    } else {
-                      setRecordStatus2("tick");
-                    }
-                    handleUpdate();
+        <div className="details">
+          <div className="nameCountry">
+            <div className="nameLabel">
+              <label className="nameCircle">{data.circleName}</label>
+              <div>
+                <input
+                  value={data.name}
+                  id="nameInputId"
+                  className="nameText"
+                  onChange={async (event) => {
+                    setData({ ...data, name: event.target.value });
                   }}
-                  className="icons2"
-                />
+                  placeholder="John Doe"
+                  readOnly={recordStatus2 === "edit"}
+                ></input>
+                <input
+                  value={data.country}
+                  className="countryText"
+                  placeholder="Albania"
+                  readOnly={recordStatus2 === "edit"}
+                  onChange={(event) => {
+                    setData({ ...data, country: event.target.value });
+                  }}
+                ></input>
               </div>
             </div>
-            <div className="moreInfo">
-              <img src="./mail.png" className="icons3" />
-              <input
-                value={data.email}
-                className="emailInput"
-                placeholder="Email"
-                readOnly={recordStatus2 === "edit"}
-                onChange={(event) => {
-                  setData({ ...data, email: event.target.value });
-                }}
-              ></input>
-              <img src="./phone.png" className="icons3" />
-              <input
-                value={data.phone}
-                type="tel"
-                className="emailInput"
-                placeholder="Phone"
-                readOnly={recordStatus2 === "edit"}
-                onChange={(event) => {
-                  setData({ ...data, phone: event.target.value });
-                }}
-              ></input>
+            <div className="nameEdit">
               <img
-                src="./linkedin.png"
-                className="icons4"
-                title={data.linkedin}
+                src={recordStatus2 === "tick" ? "/tick.svg" : "/edit.png"}
                 onClick={() => {
                   if (recordStatus2 === "tick") {
-                    const linkedin = prompt(
-                      "Please enter your Linkedin link:",
-                      data.linkedin
-                    );
-                    setData({ ...data, linkedin: `${linkedin}` });
+                    setRecordStatus2("edit");
+
+                    setData({
+                      ...data,
+                      circleName: data.name.substring(0, 4),
+                    });
+                  } else {
+                    setRecordStatus2("tick");
                   }
+                  handleUpdate();
                 }}
-              />
-              <img
-                src="./github.png"
-                className="icons5"
-                title={data.github}
-                onClick={() => {
-                  if (recordStatus2 === "tick") {
-                    const github = prompt(
-                      "Please enter your Github link:",
-                      data.github
-                    );
-                    setData({ ...data, github: `${github}` });
-                  }
-                }}
+                className="icons2"
               />
             </div>
           </div>
-        </form>
+          <div className="moreInfo">
+            <img src="./mail.png" className="icons3" />
+            <input
+              value={data.email}
+              className="emailInput"
+              placeholder="Email"
+              readOnly={recordStatus2 === "edit"}
+              onChange={(event) => {
+                setData({ ...data, email: event.target.value });
+              }}
+            ></input>
+            <img src="./phone.png" className="icons3" />
+            <input
+              value={data.phone}
+              type="tel"
+              className="emailInput"
+              placeholder="Phone"
+              readOnly={recordStatus2 === "edit"}
+              onChange={(event) => {
+                setData({ ...data, phone: event.target.value });
+              }}
+            ></input>
+            <img
+              src="./linkedin.png"
+              className="icons4"
+              title={data.linkedin}
+              onClick={() => {
+                if (recordStatus2 === "tick") {
+                  const linkedin = prompt(
+                    "Please enter your Linkedin link:",
+                    data.linkedin
+                  );
+                  setData({ ...data, linkedin: `${linkedin}` });
+                }
+              }}
+            />
+            <img
+              src="./github.png"
+              className="icons5"
+              title={data.github}
+              onClick={() => {
+                if (recordStatus2 === "tick") {
+                  const github = prompt(
+                    "Please enter your Github link:",
+                    data.github
+                  );
+                  setData({ ...data, github: `${github}` });
+                }
+              }}
+            />
+          </div>
+        </div>
+
         <div className="experience">
           <label className="experienceLabel">
             <img src="./experience.png" className="icons6" />
@@ -238,6 +244,7 @@ export default function Profile() {
             />
           </div>
         </div>
+
         <div className="availability">
           <label className="experienceLabel">
             <img src="./availability.png" className="icons6" />
