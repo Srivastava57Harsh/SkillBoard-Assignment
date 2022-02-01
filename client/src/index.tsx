@@ -4,7 +4,7 @@ import "./index.css";
 import HomePage from "./homePage";
 import Profile from "./profile";
 import reportWebVitals from "./reportWebVitals";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route,Routes,BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
